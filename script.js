@@ -89,112 +89,123 @@
 })();
 
 // Carousel Component - Simplified from Embla Carousel
+// Carousel Component — Option A (JS controls slide index only; CSS controls item widths)
 (function() {
   const carousels = document.querySelectorAll('.carousel');
-  
+
   carousels.forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const items = carousel.querySelectorAll('.carousel-item');
     const prevBtn = carousel.querySelector('.carousel-prev');
     const nextBtn = carousel.querySelector('.carousel-next');
-    const dots = carousel.querySelectorAll('.carousel-dot');
-    
+    let dotsContainer = carousel.parentElement.querySelector('.carousel-dots');
+
     if (!track || items.length === 0) return;
-    
-    let currentIndex = 0;
-    let totalItems = items.length;
+
+    let currentIndex = 0; // index of first visible item
     let itemsPerView = getItemsPerView();
-    
+    let totalItems = items.length;
+    let totalSlides = Math.ceil(totalItems / itemsPerView);
+
     function getItemsPerView() {
       if (window.innerWidth >= 1024) return 3;
       if (window.innerWidth >= 768) return 2;
       return 1;
     }
-    
-    function getTotalSlides() {
-      return Math.ceil(totalItems / itemsPerView);
-    }
-    
+
     function getCurrentSlide() {
       return Math.floor(currentIndex / itemsPerView);
     }
-    
+
     function updateCarousel() {
-      // Recalculate itemsPerView on update (for responsive)
+      // recompute itemsPerView & slides (responsive)
       itemsPerView = getItemsPerView();
-      const itemWidth = 100 / itemsPerView;
-      const translateX = -currentIndex * itemWidth;
-      track.style.transform = `translateX(${translateX}%)`;
-      
-      // Update dots - compare slide numbers, not item indices
+      totalSlides = Math.ceil(totalItems / itemsPerView);
+
+      // clamp currentIndex so we don't overflow
+      const maxIndex = Math.max(0, totalItems - itemsPerView);
+      currentIndex = Math.min(currentIndex, maxIndex);
+
+      // compute current slide (0,1,2...)
       const currentSlide = getCurrentSlide();
-      const totalSlides = getTotalSlides();
-      dots.forEach((dot, dotIndex) => {
-        // Hide dots that don't correspond to actual slides
-        if (dotIndex >= totalSlides) {
-          dot.style.display = 'none';
-        } else {
-          dot.style.display = '';
-          if (dotIndex === currentSlide) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
+
+      // Move by slide * 100% — this aligns with CSS where each "slide" fills the viewport
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      track.style.transition = 'transform 0.35s ease';
+
+      // Update dots: create if necessary
+      if (!dotsContainer) {
+        // Try to find a .carousel-dots sibling; if not present, create one
+        dotsContainer = carousel.parentElement.querySelector('.carousel-dots');
+      }
+      if (dotsContainer) {
+        // If not enough dots, regenerate
+        const existingDots = dotsContainer.querySelectorAll('.carousel-dot');
+        if (existingDots.length !== totalSlides) {
+          dotsContainer.innerHTML = '';
+          for (let i = 0; i < totalSlides; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'carousel-dot';
+            btn.setAttribute('aria-label', `Go to slide ${i+1}`);
+            // First dot active by default
+            if (i === currentSlide) btn.classList.add('active');
+            dotsContainer.appendChild(btn);
+            btn.addEventListener('click', () => goToSlide(i));
           }
+        } else {
+          // Toggle active state
+          existingDots.forEach((d, i) => {
+            if (i === currentSlide) d.classList.add('active'); else d.classList.remove('active');
+            // hide dots beyond totalSlides (defensive)
+            d.style.display = i >= totalSlides ? 'none' : '';
+          });
         }
-      });
-      
-      // Update nav buttons
-      if (prevBtn) {
-        prevBtn.disabled = currentIndex === 0;
       }
-      if (nextBtn) {
-        const maxIndex = totalItems - itemsPerView;
-        nextBtn.disabled = currentIndex >= maxIndex;
-      }
+
+      // Update prev/next buttons
+      if (prevBtn) prevBtn.disabled = currentIndex === 0;
+      if (nextBtn) nextBtn.disabled = currentIndex >= (totalItems - itemsPerView);
     }
-    
+
     function goToSlide(slideIndex) {
-      // slideIndex is the dot index (0, 1, 2, etc.)
-      // Convert to item index
       itemsPerView = getItemsPerView();
       const targetIndex = slideIndex * itemsPerView;
       const maxIndex = Math.max(0, totalItems - itemsPerView);
       currentIndex = Math.max(0, Math.min(targetIndex, maxIndex));
       updateCarousel();
     }
-    
+
     function nextSlide() {
       itemsPerView = getItemsPerView();
-      const maxIndex = totalItems - itemsPerView;
-      if (currentIndex < maxIndex) {
-        // Move by one item, but snap to slide boundaries if needed
-        currentIndex = Math.min(currentIndex + itemsPerView, maxIndex);
-        updateCarousel();
-      }
+      const maxIndex = Math.max(0, totalItems - itemsPerView);
+      // move forward by one slide (itemsPerView)
+      currentIndex = Math.min(currentIndex + itemsPerView, maxIndex);
+      updateCarousel();
     }
-    
+
     function prevSlide() {
       itemsPerView = getItemsPerView();
-      if (currentIndex > 0) {
-        // Move by one item, but snap to slide boundaries if needed
-        currentIndex = Math.max(currentIndex - itemsPerView, 0);
-        updateCarousel();
+      currentIndex = Math.max(currentIndex - itemsPerView, 0);
+      updateCarousel();
+    }
+
+    // Attach nav handlers
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    // On initialization, generate dots if container exists
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', `Go to slide ${i+1}`);
+        dotsContainer.appendChild(btn);
+        btn.addEventListener('click', () => goToSlide(i));
       }
     }
-    
-    if (prevBtn) {
-      prevBtn.addEventListener('click', prevSlide);
-    }
-    
-    if (nextBtn) {
-      nextBtn.addEventListener('click', nextSlide);
-    }
-    
-    dots.forEach((dot, dotIndex) => {
-      dot.addEventListener('click', () => goToSlide(dotIndex));
-    });
-    
-    // Handle window resize
+
+    // Responsive: recalc on resize and maintain visible slide
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
@@ -202,20 +213,24 @@
         const oldItemsPerView = itemsPerView;
         itemsPerView = getItemsPerView();
         if (oldItemsPerView !== itemsPerView) {
-          // Recalculate currentIndex to maintain current slide
+          // snap currentIndex to the start of the current slide after change
           const currentSlide = getCurrentSlide();
           currentIndex = currentSlide * itemsPerView;
           const maxIndex = Math.max(0, totalItems - itemsPerView);
           currentIndex = Math.min(currentIndex, maxIndex);
           updateCarousel();
+        } else {
+          // still update dots/controls if totalSlides changed due to rounding
+          updateCarousel();
         }
-      }, 250);
+      }, 150);
     });
-    
-    // Initialize
+
+    // init
     updateCarousel();
   });
 })();
+
 
 // Modal/Dialog Component - Simplified from Radix UI Dialog
 (function() {
