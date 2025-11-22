@@ -302,6 +302,17 @@ h6 { font-size: var(--font-size-base); }
   width: 100%;
 }
 
+.w-2 { width: 0.5rem; }
+.h-2 { height: 0.5rem; }
+
+.mt-2 { margin-top: 0.5rem; }
+.mr-3 { margin-right: 0.75rem; }
+
+.rounded-full { border-radius: 9999px; }
+
+.flex-shrink-0 { flex-shrink: 0; }
+
+
 /* Cards */
 .card {
   background-color: hsl(var(--card));
