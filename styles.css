@@ -1055,3 +1055,47 @@ img {
   font-size: var(--font-size-sm);
   color: hsl(var(--muted-foreground));
 }
+
+.services-section .carousel-item {
+  display: flex;
+}
+
+.services-section .carousel-item .p-1 {
+  display: flex;
+  width: 100%;
+}
+
+.services-section .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Control image area only in Services */
+.services-section .card > div:first-child {
+  height: 12rem;
+  flex-shrink: 0;
+}
+
+.services-section .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Consistent spacing between title and text */
+.services-section .card-header {
+  padding: 1.25rem 1.25rem 0.5rem;
+}
+
+.services-section .card-content {
+  padding: 0.75rem 1.25rem 1.25rem;
+  flex-grow: 1;
+}
+
+/* Optional: keeps text heights consistent */
+.services-section .card-content p {
+  line-height: 1.5;
+  min-height: 3.5em;
+}
+
