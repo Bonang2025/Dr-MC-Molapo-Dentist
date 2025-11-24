@@ -1120,3 +1120,15 @@ img {
     height: 6rem;  /* 96px */
   }
 }
+
+/* Mobile call button improvements */
+.mobile-call-btn {
+  height: 3rem; /* thicker */
+  padding: 0 1rem; /* reduce side spacing */
+  width: auto; /* prevent full-width stretch */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* tighter gap between icon and text */
+}
+
