@@ -1128,9 +1128,9 @@ img {
     padding-right: 1rem !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }
 
