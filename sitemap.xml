@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!--Home Page-->
+  <url>
+    <loc>https://molapodental.co.za/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://molapodental.co.za/about</loc>
+  </url>
+
+  <!-- Services Overview Page -->
+  <url>
+    <loc>https://molapodental.co.za/services</loc>
+  </url>
+
+  <!-- Individual Service Pages -->
+  <url>
+    <loc>https://molapodental.co.za/services/dental-cleanings</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/dental-fillings</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/tooth-extraction</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/gum-infections</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/dentures</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/veneers</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/crown-bridge</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/teeth-whitening</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/orthodontic-braces</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/services/specialist-referrals</loc>
+  </url>
+
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://molapodental.co.za/gallery</loc>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://molapodental.co.za/contact</loc>
+  </url>
+
+  <!-- Staff Pages -->
+  <url>
+    <loc>https://molapodental.co.za/staff/dr-mc-molapo</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/staff/neo</loc>
+  </url>
+  <url>
+    <loc>https://molapodental.co.za/staff/ntshidiseng</loc>
+  </url>
+
+</urlset>
