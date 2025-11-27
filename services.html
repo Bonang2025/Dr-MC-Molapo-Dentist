@@ -19,32 +19,100 @@
     <meta property="og:image" content="logo.png" />
     <meta property="og:url" content="https://molapodental.co.za/services" />
 
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dentist",
-    "name": "Dr MC Molapo Dentist",
-    "image": "https://yourwebsite.com/images/clinic-photo.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "31 Park Road",
-      "addressLocality": "Bloemfontein",
-      "postalCode": "9320",
-      "addressCountry": "ZA"
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://molapodental.co.za/#services-page",
+      "url": "https://molapodental.co.za/services",
+      "name": "Our Services",
+      "description": "Explore our professional dental services, including cleanings, fillings, extractions, whitening, dentures, braces, veneers, crowns, and specialist referrals.",
+      "isPartOf": {
+        "@id": "https://molapodental.co.za/#organization"
+      }
     },
-    "telephone": "+27514300927",
-    "url": "https://molapodental.co.za",
-    "openingHours": [
-      "Mo 08:30-16:30",
-      "Tu 08:30-16:30",
-      "We 08:30-16:30",
-      "Th 08:30-16:30",
-      "Fr 08:30-16:30",
-      "Sa 08:30-12:30", 
-    ],
-    "description": "Trusted, gentle dentist in Bloemfontein providing comprehensive dental care in a clean, comfortable clinic."
-  }
-  </script>
+    {
+      "@type": "ItemList",
+      "name": "Services Offered",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "Dental Cleanings",
+          "description": "Professional teeth cleaning to remove plaque, tartar, and stains for a healthier smile.",
+          "url": "https://molapodental.co.za/dental-cleanings",
+          "image": "https://molapodental.co.za/dental-cleanings.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Dental Fillings",
+          "description": "Restore damaged teeth with durable, natural-looking composite fillings.",
+          "url": "https://molapodental.co.za/dental-fillings",
+          "image": "https://molapodental.co.za/dental-fillings.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Tooth Extraction",
+          "description": "Safe and gentle tooth removal when necessary for your oral health.",
+          "url": "https://molapodental.co.za/tooth-extraction",
+          "image": "https://molapodental.co.za/tooth-extraction.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Treatment of Gum Infections",
+          "description": "Comprehensive treatment for gum disease to restore your oral health.",
+          "url": "https://molapodental.co.za/gum-infections",
+          "image": "https://molapodental.co.za/treatment_of_gum_infections.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Dentures",
+          "description": "Custom-made dentures to restore your smile and confidence.",
+          "url": "https://molapodental.co.za/dentures",
+          "image": "https://molapodental.co.za/dentures.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Veneers",
+          "description": "Transform your smile with custom porcelain veneers.",
+          "url": "https://molapodental.co.za/veneers",
+          "image": "https://molapodental.co.za/veneers.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Crown and Bridge",
+          "description": "Restore damaged teeth or replace missing teeth with crowns and bridges.",
+          "url": "https://molapodental.co.za/crown-bridge",
+          "image": "https://molapodental.co.za/crown-bridge.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Teeth Whitening",
+          "description": "Brighten your smile with professional teeth whitening treatments.",
+          "url": "https://molapodental.co.za/teeth-whitening",
+          "image": "https://molapodental.co.za/teeth-whitening.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Orthodontic Braces",
+          "description": "Straighten your teeth and correct bite issues with braces.",
+          "url": "https://molapodental.co.za/orthodontic-braces",
+          "image": "https://molapodental.co.za/orthodontic-braces.webp"
+        },
+        {
+          "@type": "Service",
+          "name": "Specialist Referrals",
+          "description": "Coordinated referrals to trusted dental specialists for specialized care.",
+          "url": "https://molapodental.co.za/specialist-referrals",
+          "image": "https://molapodental.co.za/specialist-referrals.webp"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
   </head>
   
   <body>
