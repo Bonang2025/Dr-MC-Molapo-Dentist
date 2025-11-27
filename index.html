@@ -19,38 +19,157 @@
     <meta property="og:title" content="Dr MC Molapo Dentist | Let's take you a smile further." />
     <meta property="og:description" content="Professional dental care with a personal touch. Comprehensive dental services in a comfortable, comfortable environment." />
     <meta property="og:type" content="website" />
-    <!--Add team.png to repositorty-->
     <meta property="og:image" content="team.png" />
     <meta property="og:url" content="https://molapodental.co.za/" />
 
-     <!--FIX THE URL and IMAGE-->
-     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dentist",
-    "name": "Dr MC Molapo Dentist",
-    "image": "https://yourwebsite.com/images/clinic-photo.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "31 Park Road",
-      "addressLocality": "Bloemfontein",
-      "postalCode": "9320",
-      "addressCountry": "ZA"
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://molapodental.co.za/#organization",
+      "name": "Dr MC Molapo Dentist",
+      "url": "https://molapodental.co.za",
+      "logo": "https://molapodental.co.za/logo.png",
+      "telephone": "+27 51 430 9786",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "31 Park Road",
+        "addressLocality": "Bloemfontein",
+        "addressRegion": "Free State",
+        "postalCode": "9320",
+        "addressCountry": "ZA"
+      }
     },
-    "telephone": "+27514300927",
-    "url": "https://molapodental.co.za",
-    "openingHours": [
-      "Mo 08:30-16:30",
-      "Tu 08:30-16:30",
-      "We 08:30-16:30",
-      "Th 08:30-16:30",
-      "Fr 08:30-16:30",
-      "Sa 08:30-12:30", 
-    ],
-    "description": "Trusted, gentle dentist in Bloemfontein providing comprehensive dental care in a clean, comfortable clinic."
-  }
-  </script>
-  </head>
+    {
+      "@type": "WebSite",
+      "name": "Dr MC Molapo Dentist",
+      "url": "https://molapodental.co.za"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://molapodental.co.za/#webpage",
+      "url": "https://molapodental.co.za",
+      "name": "Home",
+      "description": "Professional dental care in Bloemfontein with a patient-centered philosophy, offering fillings, cleanings, extractions, whitening, dentures, braces, veneers, crowns, and more.",
+      "isPartOf": {
+        "@id": "https://molapodental.co.za/#organization"
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://molapodental.co.za/book-appointment",
+        "name": "Book Appointment"
+      }
+    },
+    {
+      "@type": "Dentist",
+      "@id": "https://molapodental.co.za/#dentist",
+      "name": "Dr MC Molapo Dentist",
+      "url": "https://molapodental.co.za",
+      "image": "https://molapodental.co.za/logo.png",
+      "telephone": "+27 51 430 9786",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "31 Park Road",
+        "addressLocality": "Bloemfontein",
+        "addressRegion": "Free State",
+        "postalCode": "9320",
+        "addressCountry": "ZA"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:30",
+          "closes": "12:30"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Our Services",
+      "itemListElement": [
+        {"@type": "Service","name": "Dental Cleanings","url": "https://molapodental.co.za/dental-cleanings"},
+        {"@type": "Service","name": "Dental Fillings","url": "https://molapodental.co.za/dental-fillings"},
+        {"@type": "Service","name": "Tooth Extraction","url": "https://molapodental.co.za/tooth-extraction"},
+        {"@type": "Service","name": "Treatment of Gum Infections","url": "https://molapodental.co.za/gum-infections"},
+        {"@type": "Service","name": "Dentures","url": "https://molapodental.co.za/dentures"},
+        {"@type": "Service","name": "Veneers","url": "https://molapodental.co.za/veneers"},
+        {"@type": "Service","name": "Crown and Bridge","url": "https://molapodental.co.za/crown-bridge"},
+        {"@type": "Service","name": "Teeth Whitening","url": "https://molapodental.co.za/teeth-whitening"},
+        {"@type": "Service","name": "Orthodontic Braces","url": "https://molapodental.co.za/orthodontic-braces"},
+        {"@type": "Service","name": "Specialist Referrals","url": "https://molapodental.co.za/specialist-referrals"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Our Team",
+      "itemListElement": [
+        {
+          "@type": "Person",
+          "name": "Dr Monehela Nelly Molapo",
+          "jobTitle": "Lead Dentist and Founder",
+          "url": "https://molapodental.co.za/dr-molapo",
+          "image": "https://molapodental.co.za/dr-molapo.webp"
+        },
+        {
+          "@type": "Person",
+          "name": "Neo Leteane",
+          "jobTitle": "Dental Assistant",
+          "url": "https://molapodental.co.za/neo",
+          "image": "https://molapodental.co.za/neo.webp"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you accept medical aid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we do! We accept most medical aids in South Africa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer payment plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer flexible payment plans to make dental care affordable. Our team will work with you to find a payment option that fits your budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are you located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are located at 31 Park Road, Willows, Bloemfontein (Opposite Stadium Swimming Pool)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you take walk-ins or do I have to book in advance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we do take walk-ins. However, we highly recommend booking in advance to avoid long waiting times and filled slots."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
 
   <body>  
     <!-- Navigation -->
