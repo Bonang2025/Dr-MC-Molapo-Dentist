@@ -1214,3 +1214,9 @@ img {
   transform: translate(-50%, -50%);
 }
 
+/* Fix dragging behavior on mobile */
+.before-after-wrapper {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
