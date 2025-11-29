@@ -609,3 +609,26 @@
   }
 })();
 
+document.querySelectorAll('.before-after-wrapper').forEach(wrapper => {
+  const afterImg = wrapper.querySelector('.after-img');
+  const handle = wrapper.querySelector('.slider-handle');
+
+  wrapper.addEventListener('mousemove', (e) => {
+    const rect = wrapper.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const percent = x / rect.width;
+
+    afterImg.style.clipPath = `inset(0 0 0 ${percent * 100}%)`;
+    handle.style.left = `${percent * 100}%`;
+  });
+
+  wrapper.addEventListener('touchmove', (e) => {
+    const rect = wrapper.getBoundingClientRect();
+    const x = e.touches[0].clientX - rect.left;
+    const percent = x / rect.width;
+
+    afterImg.style.clipPath = `inset(0 0 0 ${percent * 100}%)`;
+    handle.style.left = `${percent * 100}%`;
+  });
+});
+
