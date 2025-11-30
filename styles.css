@@ -1171,11 +1171,13 @@ img {
   height: 20rem; /* same height as your gallery images */
 }
 
+/* BEFORE/AFTER — HIGH PERFORMANCE VERSION */
 .before-after-wrapper {
   position: relative;
   height: 100%;
   width: 100%;
   cursor: ew-resize;
+  touch-action: pan-y;
 }
 
 .before-img,
@@ -1184,22 +1186,27 @@ img {
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
   object-fit: cover;
 }
 
-.after-img {
-  clip-path: inset(0 0 0 50%); /* starts halfway */
+.before-img {
+  width: 100%;
 }
 
-/* Slider handle (circle knob) */
+.after-img {
+  width: 50%;
+  overflow: hidden;
+  will-change: width;
+}
+
 .slider-handle {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   width: 4px;
-  background-color: hsl(var(--primary));
+  background: hsl(var(--primary));
+  will-change: left;
 }
 
 .slider-handle::after {
@@ -1212,11 +1219,4 @@ img {
   background: hsl(var(--primary));
   border-radius: 50%;
   transform: translate(-50%, -50%);
-}
-
-/* Fix dragging behavior on mobile */
-.before-after-wrapper {
-  touch-action: none;
-  -webkit-user-select: none;
-  user-select: none;
 }
