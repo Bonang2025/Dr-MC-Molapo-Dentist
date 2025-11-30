@@ -1178,27 +1178,35 @@ img {
   width: 100%;
   cursor: ew-resize;
   touch-action: pan-y;
+  overflow: hidden;
 }
 
-.before-img,
+/* BEFORE IMAGE */
+.before-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+  overflow: hidden; /* <-- IMPORTANT FIX */
+}
+
+/* AFTER IMAGE (revealed by slider) */
 .after-img {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  object-fit: cover;
-}
-
-.before-img {
-  width: 100%;
-}
-
-.after-img {
   width: 50%;
+  object-fit: cover;
+  z-index: 2;          /* <-- ensures it sits above the before image */
   overflow: hidden;
   will-change: width;
 }
 
+/* SLIDER LINE & HANDLE */
 .slider-handle {
   position: absolute;
   top: 0;
@@ -1206,7 +1214,7 @@ img {
   left: 50%;
   width: 4px;
   background: hsl(var(--primary));
-  will-change: left;
+  z-index: 3;        /* <-- slider on top */
 }
 
 .slider-handle::after {
