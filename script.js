@@ -608,37 +608,3 @@
     console.log('Service ID:', serviceId);
   }
 })();
-
-// --- HIGH PERFORMANCE BEFORE/AFTER SLIDER ---
-document.querySelectorAll('.before-after-wrapper').forEach(wrapper => {
-  
-  const afterImg = wrapper.querySelector('.after-img');
-  const handle = wrapper.querySelector('.slider-handle');
-
-  function moveSlider(xPosition) {
-    const rect = wrapper.getBoundingClientRect();
-    let offsetX = xPosition - rect.left;
-
-    if (offsetX < 0) offsetX = 0;
-    if (offsetX > rect.width) offsetX = rect.width;
-
-    const percentage = offsetX / rect.width * 100;
-
-    afterImg.style.width = percentage + "%";
-    handle.style.left = percentage + "%";
-  }
-
-  // Desktop drag
-  wrapper.addEventListener('mousemove', (e) => {
-    if (e.buttons === 1) moveSlider(e.clientX);
-  });
-
-  // Touch drag
-  wrapper.addEventListener('touchmove', (e) => {
-    moveSlider(e.touches[0].clientX);
-  });
-
-});
-
-
-
