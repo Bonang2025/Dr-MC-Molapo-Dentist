@@ -1165,134 +1165,55 @@ img {
 }
 
 /* ===== Before & After slider styles ===== */
-/* ============================================================
-   BEFORE & AFTER IMAGE SLIDER — COMPLETE CLEAN REWRITE
-   ============================================================ */
-
-.ba-frame {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;       /* Prevents stacking & layout collapse */
-  min-height: 180px;         /* Extra safety for small screens */
-  overflow: hidden;
-  border-radius: 1rem;
-  background-color: #f3f3f3;
-}
-
-/* --- Wrapper for the images (keeps stacking correct) --- */
-.ba-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* --- Before image stays fully visible at bottom layer --- */
-.ba-before,
-.ba-after {
-  position: absolute;
-  inset: 0;
-}
-
-.ba-before img,
-.ba-after img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* After image will get clipped by JS */
-.ba-after img {
-  clip-path: inset(0 0 0 50%);
-  -webkit-clip-path: inset(0 0 0 50%);
-}
-
-/* --------------------------------------------------------
-   SLIDER TRACK + HANDLE
-   -------------------------------------------------------- */
-
-.ba-track {
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
-  right: 0;
-  height: 24px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  z-index: 30;
-
-  pointer-events: auto; /* MUST be enabled for click-to-jump */
-}
-
-/* Small horizontal line inside the track */
-.ba-line {
-  position: absolute;
-  left: 1.25rem;
-  right: 1.25rem;
-  height: 2px;
-  background: hsl(210 100% 50% / 0.85); /* Primary blue */
-  border-radius: 9999px;
-  pointer-events: none; /* Line should NOT block track clicks */
-}
-
-/* --------------------------------------------------------
-   HANDLE (THE DRAGGABLE CIRCLE)
-   -------------------------------------------------------- */
-.ba-handle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 36px;
-  height: 36px;
-  border-radius: 9999px;
-
-  background: white;
-  border: 3px solid hsl(210 100% 50%);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: grab;
-  pointer-events: auto; /* REQUIRED or slider won’t drag */
-  touch-action: pan-x;
-
-  z-index: 40;
-  transition: background 0.2s ease;
-}
-
-.ba-handle:active {
-  cursor: grabbing;
-  background: hsl(210 100% 97%);
-}
-
-/* Angle icons (inside handle) */
-.ba-handle svg {
-  width: 18px;
-  height: 18px;
-  stroke: hsl(210 100% 50%);
-  stroke-width: 2.5;
-}
-
-/* --------------------------------------------------------
-   RESPONSIVE
-   -------------------------------------------------------- */
-
-@media (max-width: 480px) {
+.ba-card { background: #fff; border-radius: 12px; padding: 0.75rem; box-shadow: 0 6px 18px rgba(2,6,23,0.06); }
   .ba-frame {
-    aspect-ratio: 1 / 1; /* Square-ish for mobile */
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    min-height: 160px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #eee;
   }
 
-  .ba-handle {
-    width: 32px;
-    height: 32px;
+  /* images are direct elements in your markup */
+  .ba-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; user-select:none; -webkit-user-drag:none; }
+  .ba-before { z-index: 1; }
+  .ba-after  { z-index: 2; /* initial center clip */ clip-path: inset(0 0 0 50%); -webkit-clip-path: inset(0 0 0 50%); transition: clip-path 0.06s linear; }
+
+  /* Track & handle */
+  .ba-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.9rem;
+    height: 28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 30;
+    pointer-events: auto; /* clickable */
   }
-}
+  .ba-line {
+    position:absolute; left: 1rem; right: 1rem; height:2px; background: hsl(var(--primary) / 0.95); border-radius:9999px; pointer-events:none;
+  }
+  .ba-handle {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:36px; height:36px;
+    border-radius:9999px;
+    background:white;
+    border:3px solid hsl(var(--primary));
+    box-shadow: 0 8px 20px rgba(16,24,40,0.08);
+    display:flex; align-items:center; justify-content:center;
+    cursor: grab;
+    pointer-events: auto; /* must be interactive */
+    touch-action: pan-x;
+    z-index: 40;
+  }
+  .ba-handle:active { cursor:grabbing; }
+
 
 
