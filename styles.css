@@ -1165,114 +1165,134 @@ img {
 }
 
 /* ===== Before & After slider styles ===== */
+/* ============================================================
+   BEFORE & AFTER IMAGE SLIDER — COMPLETE CLEAN REWRITE
+   ============================================================ */
+
 .ba-frame {
   position: relative;
   width: 100%;
-  min-height: 180px; 
-  aspect-ratio: 4 / 3;   /* <— This is the missing line */
+  aspect-ratio: 4 / 3;       /* Prevents stacking & layout collapse */
+  min-height: 180px;         /* Extra safety for small screens */
   overflow: hidden;
   border-radius: 1rem;
-  background-color: hsl(var(--card));
+  background-color: #f3f3f3;
 }
 
-/* base images stack: before underneath, after on top */
-.ba-image {
+/* --- Wrapper for the images (keeps stacking correct) --- */
+.ba-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Before image stays fully visible at bottom layer --- */
+.ba-before,
+.ba-after {
   position: absolute;
   inset: 0;
+}
+
+.ba-before img,
+.ba-after img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 1rem;
-  pointer-events: none;
-  user-select: none;
 }
 
-.ba-before {
-  z-index: 1;
-}
-
-.ba-after {
-  z-index: 2;
-  /* initial centered clip (50% left inset) so handle starts centered */
+/* After image will get clipped by JS */
+.ba-after img {
   clip-path: inset(0 0 0 50%);
-  transition: clip-path 0.08s linear;
+  -webkit-clip-path: inset(0 0 0 50%);
 }
 
-/* track line (thin blue) and handle */
+/* --------------------------------------------------------
+   SLIDER TRACK + HANDLE
+   -------------------------------------------------------- */
+
 .ba-track {
   position: absolute;
+  bottom: 1rem;
   left: 0;
   right: 0;
-  bottom: 0.85rem;
   height: 24px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   z-index: 30;
-  pointer-events: auto;
+
+  pointer-events: auto; /* MUST be enabled for click-to-jump */
 }
 
-.ba-handle {
-  pointer-events: auto;    /* <— Required for dragging */
-  cursor: grab;
-  z-index: 40;
-}
-
-
+/* Small horizontal line inside the track */
 .ba-line {
   position: absolute;
   left: 1.25rem;
   right: 1.25rem;
   height: 2px;
-  background: hsl(var(--primary));
+  background: hsl(210 100% 50% / 0.85); /* Primary blue */
   border-radius: 9999px;
-  pointer-events: none;
-  transform-origin: center;
+  pointer-events: none; /* Line should NOT block track clicks */
 }
 
-/* handle: white circular dot with blue border containing inline svg arrows */
+/* --------------------------------------------------------
+   HANDLE (THE DRAGGABLE CIRCLE)
+   -------------------------------------------------------- */
 .ba-handle {
   position: absolute;
   top: 50%;
-  left: 50%; /* start centered */
-  transform: translate(-50%,-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   width: 36px;
   height: 36px;
   border-radius: 9999px;
+
   background: white;
-  border: 3px solid hsl(var(--primary));
+  border: 3px solid hsl(210 100% 50%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  pointer-events: auto; /* so we can drag */
-  touch-action: pan-x;
+
   cursor: grab;
-  overflow: hidden; /* allows half-dot to be cropped by parent overflow */
+  pointer-events: auto; /* REQUIRED or slider won’t drag */
+  touch-action: pan-x;
+
+  z-index: 40;
+  transition: background 0.2s ease;
 }
 
-/* Pressing handle */
-.ba-handle:active,
-.ba-handle:focus {
+.ba-handle:active {
   cursor: grabbing;
-  outline: none;
+  background: hsl(210 100% 97%);
 }
 
-/* SVG inside handle small and centered */
-.ba-handle svg { display: block; width: 20px; height: 20px; }
-
-/* ensure labels small but readable */
-.ba-card .text-sm { font-size: 0.9rem; }
-
-/* for accessibility — focus ring */
-.ba-handle:focus {
-  box-shadow: 0 0 0 4px hsl(var(--primary) / 0.15);
+/* Angle icons (inside handle) */
+.ba-handle svg {
+  width: 18px;
+  height: 18px;
+  stroke: hsl(210 100% 50%);
+  stroke-width: 2.5;
 }
 
-/* responsive tweaks */
-@media (min-width: 768px) {
-  .ba-track { bottom: 1rem; height: 30px; }
-  .ba-handle { width: 40px; height: 40px; }
+/* --------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------- */
+
+@media (max-width: 480px) {
+  .ba-frame {
+    aspect-ratio: 1 / 1; /* Square-ish for mobile */
+  }
+
+  .ba-handle {
+    width: 32px;
+    height: 32px;
+  }
 }
+
 
