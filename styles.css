@@ -1163,3 +1163,108 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+/* ===== Before & After slider styles ===== */
+.ba-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* important — clips handle when at edges */
+  border-radius: 1rem;
+  background-color: hsl(var(--card));
+}
+
+/* base images stack: before underneath, after on top */
+.ba-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ba-before {
+  z-index: 1;
+}
+
+.ba-after {
+  z-index: 2;
+  /* initial centered clip (50% left inset) so handle starts centered */
+  clip-path: inset(0 0 0 50%);
+  transition: clip-path 0.08s linear;
+}
+
+/* track line (thin blue) and handle */
+.ba-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.85rem; /* place slightly above bottom to avoid overlap */
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.ba-line {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 2px;
+  background: hsl(var(--primary));
+  border-radius: 9999px;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+/* handle: white circular dot with blue border containing inline svg arrows */
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%; /* start centered */
+  transform: translate(-50%,-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: white;
+  border: 3px solid hsl(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  pointer-events: auto; /* so we can drag */
+  touch-action: pan-x;
+  cursor: grab;
+  overflow: hidden; /* allows half-dot to be cropped by parent overflow */
+}
+
+/* Pressing handle */
+.ba-handle:active,
+.ba-handle:focus {
+  cursor: grabbing;
+  outline: none;
+}
+
+/* SVG inside handle small and centered */
+.ba-handle svg { display: block; width: 20px; height: 20px; }
+
+/* ensure labels small but readable */
+.ba-card .text-sm { font-size: 0.9rem; }
+
+/* for accessibility — focus ring */
+.ba-handle:focus {
+  box-shadow: 0 0 0 4px hsl(var(--primary) / 0.15);
+}
+
+/* responsive tweaks */
+@media (min-width: 768px) {
+  .ba-track { bottom: 1rem; height: 30px; }
+  .ba-handle { width: 40px; height: 40px; }
+}
+
