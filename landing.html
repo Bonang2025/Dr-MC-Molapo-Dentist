@@ -318,59 +318,70 @@
     </section>
 
 
-  <!-- FAQ -->
-  <section class="section py-12">
-    <div class="container">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-      <div class="max-w-2xl mx-auto accordion">
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-            Do you accept medical aid?
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="accordion-content" aria-hidden="true">
-            <p class="text-muted-foreground">Yes, we do! We accept most medical aids in South Africa.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-            Do you offer payment plans?
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="accordion-content" aria-hidden="true">
-            <p class="text-muted-foreground">Yes, we offer flexible payment plans to make dental care affordable.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-            Where are you located?
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="accordion-content" aria-hidden="true">
-            <p class="text-muted-foreground">We are located at 31 Park Road, Willows, Bloemfontein.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
-            Do you take walk-ins?
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="accordion-content" aria-hidden="true">
-            <p class="text-muted-foreground">Yes, we do take walk-ins. However, we highly recommend booking in advance.
+   <!-- FAQ Section -->
+    <section class="section bg-accent-30">
+      <div class="container">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+            <p class="text-lg text-muted-foreground">
+              Quick answers to common questions about our practice
             </p>
+          </div>
+          
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                Do you accept medical aid?
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="accordion-content" aria-hidden="true">
+                <p class="text-muted-foreground">Yes, we do! We accept most medical aids in South Africa.</p>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                Do you offer payment plans?
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="accordion-content" aria-hidden="true">
+                <p class="text-muted-foreground">Yes, we offer flexible payment plans to make dental care affordable. Our team will work with you to find a payment option that fits your budget.</p>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                Where are you located?
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="accordion-content" aria-hidden="true">
+                <p class="text-muted-foreground">We are located at 31 Park Road, Willows, Bloemfontein (Opposite Stadium Swimming Pool)</p>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                Do you take walk-ins or do I have to book in advance?
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="accordion-content" aria-hidden="true">
+                <p class="text-muted-foreground">Yes, we do take walk-ins. However, we highly recommend booking in advance to avoid long waiting times and filled slots.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
 
   <script>
     function toggleAccordion(button) {
