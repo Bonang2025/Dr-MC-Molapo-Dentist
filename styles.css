@@ -1220,4 +1220,10 @@ img {
   max-width: 420px; /* adjust if you want them wider/narrower */
 }
 
+@media (max-width: 767px) {
+  .hero-cta {
+    width: 100% !important;
+    max-width: 420px;
+  }
+}
 
