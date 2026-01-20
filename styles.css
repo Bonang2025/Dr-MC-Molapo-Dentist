@@ -1227,3 +1227,62 @@ img {
   }
 }
 
+/* ================================
+   Sticky Call-to-Action Card
+   ================================ */
+
+.sticky-call-card {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(24px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sticky-call-card.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.sticky-call-inner {
+  width: 100%;
+  max-width: 420px;
+  padding: 1rem 1.25rem;
+  position: relative;
+  border-radius: var(--radius);
+}
+
+/* Close (X) button */
+.sticky-close-btn {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sticky-close-btn:hover {
+  color: hsl(var(--foreground));
+}
+
+/* Optional: hide on desktop */
+@media (min-width: 1024px) {
+  .sticky-call-card {
+    display: none;
+  }
+}
+
