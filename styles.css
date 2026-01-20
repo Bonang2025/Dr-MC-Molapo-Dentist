@@ -1215,5 +1215,9 @@ img {
   }
   .ba-handle:active { cursor:grabbing; }
 
+.hero-cta {
+  width: 100%;
+  max-width: 420px; /* adjust if you want them wider/narrower */
+}
 
 
