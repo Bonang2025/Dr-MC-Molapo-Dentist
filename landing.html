@@ -476,6 +476,27 @@
       content.setAttribute('aria-hidden', expanded);
     }
   </script>
+
+  <script>
+  const stickyCallCard = document.getElementById('sticky-call-card');
+  let stickyDismissed = false;
+
+  function closeStickyCall() {
+    stickyCallCard.classList.remove('visible');
+    stickyDismissed = true;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (stickyDismissed) return;
+
+    if (window.scrollY > 300) {
+      stickyCallCard.classList.add('visible');
+    } else {
+      stickyCallCard.classList.remove('visible');
+    }
+  });
+</script>
+
 </body>
 
 </html>
