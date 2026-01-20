@@ -15,33 +15,8 @@
   <!-- Google Ads specific meta tags could go here -->
 </head>
 
-  <!-- Sticky Call Card -->
-<div id="sticky-call-card" class="sticky-call-card">
-  <div class="sticky-call-inner card shadow-xl">
-    
-    <!-- Close button -->
-    <button class="sticky-close-btn" aria-label="Close" onclick="closeStickyCall()">
-      ✕
-    </button>
-
-    <!-- Content -->
-    <div class="flex items-center justify-between gap-4">
-      <div class="flex flex-col text-left">
-        <span class="text-sm text-muted-foreground">Need an appointment?</span>
-        <span class="font-semibold text-foreground">Call to book now</span>
-      </div>
-
-      <a href="tel:0514300927"
-         class="btn btn-default btn-rounded-full px-6">
-        Call Now
-      </a>
-    </div>
-
-  </div>
-</div>
-
+  
 <body>
-
   <!-- Simplified Header: Logo Only -->
   <nav class="nav">
     <div class="container nav-container justify-center">
@@ -476,26 +451,6 @@
       content.setAttribute('aria-hidden', expanded);
     }
   </script>
-
-  <script>
-  const stickyCallCard = document.getElementById('sticky-call-card');
-  let stickyDismissed = false;
-
-  function closeStickyCall() {
-    stickyCallCard.classList.remove('visible');
-    stickyDismissed = true;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (stickyDismissed) return;
-
-    if (window.scrollY > 300) {
-      stickyCallCard.classList.add('visible');
-    } else {
-      stickyCallCard.classList.remove('visible');
-    }
-  });
-</script>
 
 </body>
 
