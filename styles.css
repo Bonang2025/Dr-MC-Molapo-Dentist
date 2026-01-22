@@ -1253,6 +1253,11 @@ img {
   transform: translateY(0);
 }
 
+.mobile-sticky-card .mobile-call-btn {
+  width: 100%;
+  max-width: 22rem;
+}
+
 .close-sticky-card {
   position: absolute;
   top: 8px;
