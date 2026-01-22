@@ -1226,3 +1226,53 @@ img {
     max-width: 420px;
   }
 }
+
+/* Mobile Sticky Call Card */
+.mobile-sticky-card {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: hsl(var(--card));
+  padding: var(--spacing-4);
+  padding-right: var(--spacing-8);
+  /* Make room for close button */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  /* "Rounded edges" can mean fully rounded or just corners. For a bottom card, top corners make sense, but user asked for "rounded edges". Let's stick with radius. */
+  border: 1px solid hsl(var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-sticky-card {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border: 1px solid hsl(var(--border));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: hsl(var(--muted-foreground));
+  z-index: 1000;
+  padding: 0;
+}
+
+.close-sticky-card:hover {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--foreground));
+}
+
+@media (min-width: 768px) {
+  .mobile-sticky-card {
+    display: none;
+  }
+}
