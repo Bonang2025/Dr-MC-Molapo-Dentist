@@ -201,6 +201,7 @@ h6 { font-size: var(--font-size-base); }
 .bg-accent { background-color: hsl(var(--accent)); }
 .bg-card { background-color: hsl(var(--card)); }
 .bg-muted { background-color: hsl(var(--muted)); }
+.bg-primary\/10 { background-color: hsl(var(--primary) / 0.1); }
 
 .text-foreground { color: hsl(var(--foreground)); }
 .text-primary { color: hsl(var(--primary)); }
@@ -304,7 +305,10 @@ h6 { font-size: var(--font-size-base); }
 
 .w-2 { width: 0.5rem; }
 .h-2 { height: 0.5rem; }
+.w-4 { width: 1rem; }
+.h-4 { height: 1rem; }
 
+.mt-1 { margin-top: 0.25rem; }
 .mt-2 { margin-top: 0.5rem; }
 .mr-3 { margin-right: 0.75rem; }
 
