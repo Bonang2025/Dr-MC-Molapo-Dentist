@@ -1547,3 +1547,13 @@ img {
     display: none;
   }
 }
+
+ .dhero-section {
+    display: none;
+ }
+
+ @media (min-width: 768px) {
+  .dhero-section {
+                display: block;
+            }
+        }
