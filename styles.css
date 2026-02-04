@@ -1557,3 +1557,13 @@ img {
                 display: block;
             }
         }
+
+.why-section {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .why-section {
+                display: block;
+            }
+        }
