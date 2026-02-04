@@ -83,22 +83,19 @@
         </div>
     </section>
   
-  <section class="bg-background pt-6 pb-8 md:pt-12 md:pb-12">
-    <div class="container text-center md:text-left">
-      <div class="max-w-xl mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8 md:items-center">
+   <section class="bg-background pt-6 pb-8 md:hidden">
+    <div class="container text-center">
+      <div class="max-w-xl mx-auto">
 
-        <!-- Left Column: Headline, Stats, Desktop CTA -->
-        <div class="flex flex-col md:items-start">
-          <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+        <!-- Left Column (Mobile) -->
+        <div class="flex flex-col h-full">
+          <h1 class="text-3xl font-bold text-foreground mb-6 uppercase tracking-tight">
             Expert Dentist in <br />
             <span class="text-primary">Bloemfontein</span>
           </h1>
 
-          <!-- Mobile Only Image (Preserving exact mobile layout order if needed, but actually user asked to shift image to right on desktop) -->
-          <!-- To strictly follow "mobile version stays exactly the way it is", the order on mobile is Headline -> Image -> Name -> Stats -> CTAs. -->
-          <!-- On desktop: Headline -> Stats -> CTA. Image is in right col. -->
-
-          <div class="md:hidden mb-6 text-center">
+          <!-- Mobile Only Image -->
+          <div class="mb-6 text-center">
             <img src="assets/staff/dr-molapo.webp" alt="Dr MC Molapo" class="rounded-2xl shadow-lg mx-auto object-cover"
               style="max-height: 260px; width: auto;" />
             <p class="text-sm text-muted-foreground mt-2">
@@ -106,8 +103,8 @@
             </p>
           </div>
 
-          <!-- Stats -->
-          <div class="flex flex-col gap-2 mb-8 items-center md:items-start">
+          <!-- Stats (Mobile) -->
+          <div class="flex flex-col gap-2 mb-8 items-center">
             <div class="flex items-center gap-2">
               <svg class="icon-md text-primary w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -121,12 +118,12 @@
                   d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
                 </path>
               </svg>
-              <span class="text-lg font-medium text-foreground">25 five-star Google reviews</span>
+              <span class="text-lg font-medium text-foreground">29 five-star reviews on Google</span>
             </div>
           </div>
 
           <!-- Mobile CTAs -->
-          <div class="flex flex-col gap-4 max-w-sm mx-auto md:hidden">
+          <div class="flex flex-col gap-4 max-w-sm mx-auto">
             <a href="tel:0514300927"
               class="btn btn-default btn-lg btn-rounded-full justify-center text-lg mobile-call-btn mx-auto hero-cta">
               <svg viewBox="0 0 24 24" class="icon-md flex-shrink-0" fill="currentColor" aria-hidden="true">
@@ -145,6 +142,12 @@
               <span>WhatsApp to Book Now</span>
             </a>
           </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 
           <!-- Desktop CTA -->
           <div class="hidden md:block mt-2">
