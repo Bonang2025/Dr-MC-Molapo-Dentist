@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Hero (dhero)</title>
+    <link rel="stylesheet" href="/fonts/poppins.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 1. ONLY appear on screen sizes larger than 767px */
+        .dhero-section {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .dhero-section {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background">
+
+    <!-- 
+        Constraints:
+        1. >767px visibility (handled by CSS above)
+        2. Responsive layout (spacing stretches) -> Utilized 'container grid' and 'justify-between' or 'gap'
+        3. 2 Columns (Left/Right) -> 'grid-cols-2'
+        4. Left: Headline, benefits, CTA
+        5. Right: Hero image, caption below
+        6. Match themes/styles -> Using site utility classes
+    -->
+    <section class="dhero-section section">
+        <!-- Using container to center and constrain width, grid for 2 columns -->
+        <!-- 'gap-8' or 'gap-12' provides responsive spacing between columns -->
+        <div class="container grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+            <!-- Left column -->
+            <div class="flex flex-col items-start justify-center">
+                <!-- Headline -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-8 text-foreground leading-tight">
+                    Expert Dentist in<br>Bloemfontein
+                </h1>
+
+                <!-- Benefit points (using site style list or just stacked text) -->
+                <div class="flex flex-col gap-4 mb-8">
+                    <p class="text-lg text-foreground font-medium">
+                        22 years experience
+                    </p>
+                    <p class="text-lg text-foreground font-medium">
+                        29 five-star reviews on Google
+                    </p>
+                </div>
+
+                <!-- Call to action button -->
+                <a href="tel:0514300927" class="btn btn-default btn-lg btn-rounded-full">
+                    Book appointment now
+                </a>
+            </div>
+
+            <!-- Right column -->
+            <div class="flex flex-col items-center justify-center">
+                <!-- Hero Image -->
+                <!-- Square image with rounded corners and shadow as per previous refinement theme -->
+                <div class="w-full max-w-md aspect-square rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://molapodental.co.za/assets/staff/dr-molapo.webp" alt="Dr MC Molapo" class="w-full h-full object-cover">
+                </div>
+                <!-- Caption below image -->
+                <div class="mt-4 font-medium text-foreground">
+                    Dr MC Molapo
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
