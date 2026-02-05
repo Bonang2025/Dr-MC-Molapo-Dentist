@@ -1591,3 +1591,34 @@ img {
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
+/* Desktop Sticky Call Card */
+.desktop-sticky-card {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  /* Start hidden (down) and centered */
+  transform: translateX(-50%) translateY(200%);
+  background-color: hsl(var(--card));
+  padding: var(--spacing-4);
+  padding-right: var(--spacing-10); /* More space for close button */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+  min-width: 300px;
+}
+
+.desktop-sticky-card.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 767px) {
+  .desktop-sticky-card {
+    display: none !important;
+  }
+}
