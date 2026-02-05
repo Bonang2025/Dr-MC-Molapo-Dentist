@@ -647,6 +647,19 @@
     </a>
   </div>
 
+  <!-- Mobile Sticky Call Card -->
+  <div id="desktopStickyCard" class="desktop-sticky-card">
+    <button class="close-sticky-card" onclick="closeDesktopStickyCard()" aria-label="Close call button">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+    <a href="tel:0514300927" class="btn btn-default btn-lg btn-rounded-full w-full justify-center">
+      Book appointment now
+    </a>
+  </div>
+
   <script>
     function toggleAccordion(button) {
       const content = button.nextElementSibling;
@@ -676,6 +689,38 @@
         card.classList.remove('visible');
       }
     });
+
+    let desktopStickyCardClosed = false;
+
+    function closeDesktopStickyCard() {
+      const card = document.getElementById('desktopStickyCard');
+      if (card) {
+        card.classList.remove('visible');
+        desktopStickyCardClosed = true;
+      }
+    }
+
+    window.addEventListener('scroll', function () {
+      // Handle Mobile Card
+      const mobileCard = document.getElementById('mobileStickyCard');
+      if (mobileCard && !stickyCardClosed) {
+        if (window.scrollY > 100) {
+          mobileCard.classList.add('visible');
+        } else {
+          mobileCard.classList.remove('visible');
+        }
+      }
+
+      // Handle Desktop Card
+      const desktopCard = document.getElementById('desktopStickyCard');
+      if (desktopCard && !desktopStickyCardClosed) {
+        if (window.scrollY > 100) {
+          desktopCard.classList.add('visible');
+        } else {
+          desktopCard.classList.remove('visible');
+        }
+      }
+    });  
   </script>
 
 </body>
