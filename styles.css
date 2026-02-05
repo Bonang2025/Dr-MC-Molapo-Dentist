@@ -1600,8 +1600,9 @@ img {
   /* Start hidden (down) and centered */
   transform: translateX(-50%) translateY(200%);
   background-color: hsl(var(--card));
-  padding: var(--spacing-4);
-  padding-right: var(--spacing-10); /* More space for close button */
+  padding: var(--spacing-6);
+  padding-right: var(--spacing-12);
+  /* More space for close button */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   z-index: 999;
   border-radius: var(--radius);
@@ -1610,11 +1611,17 @@ img {
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease-in-out;
-  min-width: 300px;
+  min-width: 320px;
+  max-width: 400px;
+  width: auto;
 }
 
 .desktop-sticky-card.visible {
   transform: translateX(-50%) translateY(0);
+}
+
+.desktop-sticky-card .btn {
+  white-space: nowrap;
 }
 
 @media (max-width: 767px) {
