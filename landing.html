@@ -15,10 +15,418 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Dr MC Molapo Dentist - Expert Dentist in Bloemfontein</title>
   <meta name="description" content="Expert dentist in Bloemfontein with 22 years of experience. Book your appointment today!" />
 
+
+  <!--Inline CSS to load faster-->
+  <style>
+
+:root {
+  /* Colors - HSL format */
+  --background: 0 0% 100%;
+  --foreground: 215 25% 27%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 215 25% 27%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 25% 27%;
+
+  --primary: 207 35% 48%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 207 35% 48%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 207 50% 94%;
+  --accent-foreground: 207 35% 48%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 207 35% 48%;
+
+  --radius: 0.75rem;
+
+  /* Spacing - Tailwind defaults */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+
+  /* Container */
+  --container-padding: 2rem;
+  --container-max-width: 1400px;
+}
+    
+    .container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+  max-width: var(--container-max-width);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+}
+  .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+    .justify-center {
+  justify-content: center;
+}
+
+    .items-center {
+  align-items: center;
+}
+    
+  .hidden {
+  display: none;
+}
+
+    @media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
+    .flex-col {
+  flex-direction: column;
+}
+
+      .text-foreground {
+  color: hsl(var(--foreground));
+}
+
+      .font-medium {
+  font-weight: 500;
+}
+
+      .text-sm {
+  font-size: var(--font-size-sm);
+}
+
+      .flex {
+  display: flex;
+}
+
+      .gap-2 {
+  gap: var(--spacing-2);
+}
+
+      .w-4 {
+  width: 1rem;
+}
+
+      .h-4 {
+  height: 1rem;
+}
+
+      .flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+      .text-primary {
+  color: hsl(var(--primary));
+}
+
+       .dhero-section {
+    display: none;
+ }
+
+ @media (min-width: 768px) {
+  .dhero-section {
+                display: block;
+            }
+        }
+
+     .section {
+  padding: var(--spacing-20) 0;
+}
+
+      .grid {
+  display: grid;
+}
+
+
+      .grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+      .gap-8 {
+  gap: var(--spacing-8);
+}
+
+
+      @media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+      .items-start {
+  align-items: flex-start;
+}
+
+      .text-4xl {
+  font-size: var(--font-size-4xl);
+}
+
+      @media (min-width: 768px) {
+  .md\:text-5xl {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+      @media (min-width: 1024px) {
+  .lg\:text-6xl {
+    font-size: var(--font-size-6xl);
+  }
+}
+
+      .font-bold {
+  font-weight: 700;
+}
+
+      .mb-8 {
+  margin-bottom: var(--spacing-8);
+}
+
+      .gap-4 {
+  gap: var(--spacing-4);
+}
+
+      .icon-md {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+      .text-lg {
+  font-size: var(--font-size-lg);
+}
+
+      .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  white-space: nowrap;
+  border-radius: calc(var(--radius) - 2px);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+      .btn-default {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-default:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+      .btn-lg {
+  height: 2.75rem;
+  padding: 0 var(--spacing-8);
+  border-radius: calc(var(--radius) - 2px);
+}
+
+      .btn-rounded-full {
+  border-radius: 9999px;
+}
+
+      @media (max-width: 767px) {
+  .hero-btn-mobile {
+    width: auto !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+      .w-full {
+  width: 100%;
+}
+
+    .aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+      .rounded-2xl {
+  border-radius: 1rem;
+}
+
+      .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+      .overflow-hidden {
+  overflow: hidden;
+}
+
+      .h-full {
+  height: 100%;
+}
+
+      .object-cover {
+  object-fit: cover;
+}
+
+    .bg-background {
+  background-color: hsl(var(--background));
+}
+
+      .pt-6 {
+  padding-top: var(--spacing-6);
+}
+
+      .pb-8 {
+  padding-bottom: var(--spacing-8);
+}
+
+       .md\:hidden {
+    display: none;
+  }
+}
+
+    .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+    .text-3xl {
+  font-size: var(--font-size-3xl);
+}
+
+    .mb-6 {
+  margin-bottom: var(--spacing-6);
+}
+
+    .mt-2 {
+  margin-top: 0.5rem;
+}
+
+    .text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+    .mobile-call-btn {
+  height: 3rem;
+  /* thicker */
+  padding: 0 1rem;
+  /* reduce side spacing */
+  width: auto;
+  /* prevent full-width stretch */
+  min-width: 18rem;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* tighter gap between icon and text */
+}
+
+  .hero-cta {
+  width: 100%;
+  max-width: 420px;
+  /* adjust if you want them wider/narrower */
+}
+
+@media (max-width: 767px) {
+  .hero-cta {
+    width: 100% !important;
+    max-width: 420px;
+  }
+}
+    
+  </style>
+
   <link rel="preload" as="image" href="assets/staff/dr-molapo.webp" fetchpriority="high">
 
   <link rel="stylesheet" href="/fonts/poppins.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Google Ads specific meta tags could go here -->
