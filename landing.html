@@ -87,6 +87,64 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   height: 1.25rem;
 }
 
+    .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  white-space: nowrap;
+  border-radius: calc(var(--radius) - 2px);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+      .btn-default {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-default:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+      .btn-lg {
+  height: 2.75rem;
+  padding: 0 var(--spacing-8);
+  border-radius: calc(var(--radius) - 2px);
+}
+
+      .btn-rounded-full {
+  border-radius: 9999px;
+}
+
+      @media (max-width: 767px) {
+  .hero-btn-mobile {
+    width: auto !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
     body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -268,63 +326,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   font-size: var(--font-size-lg);
 }
 
-      .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-  white-space: nowrap;
-  border-radius: calc(var(--radius) - 2px);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  text-decoration: none;
-}
-
-.btn:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
-}
-
-.btn:disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-      .btn-default {
-  background-color: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-}
-
-.btn-default:hover {
-  background-color: hsl(var(--primary) / 0.9);
-}
-
-      .btn-lg {
-  height: 2.75rem;
-  padding: 0 var(--spacing-8);
-  border-radius: calc(var(--radius) - 2px);
-}
-
-      .btn-rounded-full {
-  border-radius: 9999px;
-}
-
-      @media (max-width: 767px) {
-  .hero-btn-mobile {
-    width: auto !important;
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    display: inline-flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-}
+      
 
       .w-full {
   width: 100%;
