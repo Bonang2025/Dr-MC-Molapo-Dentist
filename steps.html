@@ -73,7 +73,7 @@
 
          /* Vertical connector — mobile only */
         @media (max-width: 1023px) {
-            .step-card:not(:last-child)::after {
+            .step-item:not(:last-child)::after {
                 content: "";
                 display: block;
                 width: 2px;
@@ -105,53 +105,61 @@
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-6xl mx-auto steps-grid">
 
                 <!-- Step 1 -->
-                <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
-                    <!-- Step badge -->
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="step-badge">STEP 1</span>
-                    </div>
-                    <!-- Content -->
-                    <h3 class="font-semibold text-lg mb-2 text-foreground">Call or WhatsApp Us</h3>
-                    <p class="text-muted-foreground">
-                        Reach out by phone or WhatsApp to speak directly with our friendly reception team about your
-                        needs.
-                    </p>
+                <div class="step-item">
+                    <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
+                        <!-- Step badge -->
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="step-badge">STEP 1</span>
+                        </div>
+                        <!-- Content -->
+                        <h3 class="font-semibold text-lg mb-2 text-foreground">Call or WhatsApp Us</h3>
+                        <p class="text-muted-foreground">
+                            Reach out by phone or WhatsApp to speak directly with our friendly reception team about your
+                            needs.
+                        </p>
+                     </div>
                 </div>
 
                 <!-- Step 2 -->
-                <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="step-badge">STEP 2</span>
+                <div class="step-item">
+                    <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="step-badge">STEP 2</span>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-foreground">Book Your Appointment</h3>
+                        <p class="text-muted-foreground">
+                            Choose a date and time that works for you. We offer same-day appointments when slots are
+                            available.
+                        </p>
                     </div>
-                    <h3 class="font-semibold text-lg mb-2 text-foreground">Book Your Appointment</h3>
-                    <p class="text-muted-foreground">
-                        Choose a date and time that works for you. We offer same-day appointments when slots are
-                        available.
-                    </p>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="step-badge">STEP 3</span>
+                <div class="step-item">
+                    <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="step-badge">STEP 3</span>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-foreground">Visit Our Practice</h3>
+                        <p class="text-muted-foreground">
+                            Come to our practice at 31 Park Road, Willows, Bloemfontein. Parking is available on-site.
+                        </p>
                     </div>
-                    <h3 class="font-semibold text-lg mb-2 text-foreground">Visit Our Practice</h3>
-                    <p class="text-muted-foreground">
-                        Come to our practice at 31 Park Road, Willows, Bloemfontein. Parking is available on-site.
-                    </p>
                 </div>
 
                 <!-- Step 4 -->
-                <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="step-badge">STEP 4</span>
+                <div class="step-item">
+                    <div class="card border-border p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow step-card">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="step-badge">STEP 4</span>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-foreground">Get Expert Treatment</h3>
+                        <p class="text-muted-foreground">
+                            Receive professional dental care from Dr MC Molapo with 22 years of experience and a gentle
+                            touch.
+                        </p>
                     </div>
-                    <h3 class="font-semibold text-lg mb-2 text-foreground">Get Expert Treatment</h3>
-                    <p class="text-muted-foreground">
-                        Receive professional dental care from Dr MC Molapo with 22 years of experience and a gentle
-                        touch.
-                    </p>
-                </div>
+                 </div>
 
             </div>
             <!-- /steps-grid -->
