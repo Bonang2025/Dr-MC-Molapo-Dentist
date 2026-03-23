@@ -761,3 +761,20 @@
     setClip(50);
   });
 })();
+
+function getCurrentDate() {
+    const today = new Date();
+    
+    let day = today.getDate();
+    let month = today.getMonth() + 1; // Months are 0-based
+    const year = today.getFullYear();
+
+    // Add leading zeros if needed
+    day = day < 10 ? '0' + day : day;
+    month = month < 10 ? '0' + month : month;
+
+    return `${day}-${month}-${year}`;
+}
+
+// Insert into paragraph
+document.getElementById("date").textContent = getCurrentDate();
