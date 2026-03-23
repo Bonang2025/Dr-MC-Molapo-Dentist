@@ -762,19 +762,12 @@
   });
 })();
 
-function getCurrentDate() {
-    const today = new Date();
-    
-    let day = today.getDate();
-    let month = today.getMonth() + 1; // Months are 0-based
-    const year = today.getFullYear();
-
-    // Add leading zeros if needed
-    day = day < 10 ? '0' + day : day;
-    month = month < 10 ? '0' + month : month;
-
-    return `${day}-${month}-${year}`;
+function getFormattedDate() {
+    return new Date().toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
 }
 
-// Insert into paragraph
-document.getElementById("date").textContent = getCurrentDate();
+document.getElementById("date").textContent = getFormattedDate();
