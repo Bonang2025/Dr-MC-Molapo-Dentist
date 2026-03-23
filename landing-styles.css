@@ -1228,3 +1228,195 @@ img {
 .w-1\.5 { width: 0.375rem; }
 
 .h-1\.5 { height: 0.375rem; }
+
+ .pricing-accordion-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Override accordion item to look like a card */
+    .pricing-accordion .accordion-item {
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      margin-bottom: var(--spacing-3);
+      overflow: hidden;
+      border-bottom: 1px solid hsl(var(--border));
+      transition: box-shadow 0.2s;
+    }
+
+    .pricing-accordion .accordion-item:hover {
+      box-shadow: 0 4px 16px hsl(var(--primary) / 0.08);
+    }
+
+    /* Trigger row */
+    .pricing-accordion .accordion-trigger {
+      padding: var(--spacing-5) var(--spacing-6);
+      font-size: var(--font-size-base);
+      font-weight: 600;
+      color: hsl(var(--foreground));
+      background-color: hsl(var(--card));
+      transition: background-color 0.2s, color 0.2s;
+      text-decoration: none !important;
+    }
+
+    .pricing-accordion .accordion-trigger:hover {
+      background-color: hsl(var(--accent));
+      color: hsl(var(--primary));
+      text-decoration: none;
+    }
+
+    .pricing-accordion .accordion-trigger[aria-expanded="true"] {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+
+    .pricing-accordion .accordion-trigger[aria-expanded="true"] svg {
+      stroke: hsl(var(--primary-foreground));
+    }
+
+
+
+    /* Content area */
+    .pricing-accordion .accordion-content {
+      background-color: hsl(var(--background));
+    }
+
+    .accordion-content-inner {
+      padding: var(--spacing-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-8);
+    }
+
+    /* Sub-table group */
+    .pricing-table-group h3 {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: hsl(var(--primary));
+      margin-bottom: var(--spacing-3);
+    }
+
+    /* Pricing table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--font-size-sm);
+    }
+
+    .pricing-table thead tr {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+
+    .pricing-table thead th {
+      padding: 0.65rem var(--spacing-4);
+      text-align: left;
+      font-weight: 600;
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-table thead th:last-child,
+    .pricing-table tbody td:last-child {
+      text-align: right;
+    }
+
+    .pricing-table tbody tr {
+      border-bottom: 1px solid hsl(var(--border));
+      transition: background-color 0.15s;
+    }
+
+    .pricing-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-table tbody tr:nth-child(even) {
+      background-color: hsl(var(--accent) / 0.5);
+    }
+
+    .pricing-table tbody tr:hover {
+      background-color: hsl(var(--accent));
+    }
+
+    .pricing-table tbody td {
+      padding: 0.75rem var(--spacing-4);
+      color: hsl(var(--foreground));
+    }
+
+    .pricing-table .price-cell {
+      font-weight: 600;
+      color: hsl(var(--primary));
+      white-space: nowrap;
+    }
+
+    /* Note beneath accordion content */
+    .pricing-note {
+      margin-top: var(--spacing-4);
+      padding: var(--spacing-4) var(--spacing-5);
+      background-color: hsl(var(--accent));
+      border-left: 3px solid hsl(var(--primary));
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: var(--font-size-sm);
+      color: hsl(var(--muted-foreground));
+    }
+
+    .pricing-note strong {
+      color: hsl(var(--foreground));
+    }
+
+    /* CTA box at bottom of page */
+    .pricing-cta-box {
+      background-color: hsl(var(--primary));
+      border-radius: var(--radius);
+      padding: var(--spacing-10) var(--spacing-8);
+      text-align: center;
+      color: hsl(var(--primary-foreground));
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .pricing-cta-box h2 {
+      margin-bottom: var(--spacing-4);
+    }
+
+    .pricing-cta-box p {
+      opacity: 0.88;
+      margin-bottom: var(--spacing-6);
+      font-size: var(--font-size-base);
+    }
+
+    .btn-white {
+      background-color: hsl(var(--primary-foreground));
+      color: hsl(var(--primary));
+      border-radius: 9999px;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-white:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      .pricing-accordion .accordion-trigger {
+        padding: var(--spacing-4) var(--spacing-4);
+      }
+
+      .accordion-content-inner {
+        padding: var(--spacing-4);
+      }
+
+      .pricing-table thead th,
+      .pricing-table tbody td {
+        padding: 0.6rem var(--spacing-3);
+      }
+    }
