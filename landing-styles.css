@@ -1420,3 +1420,106 @@ img {
         padding: 0.6rem var(--spacing-3);
       }
     }
+
+    .new-testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1152px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .new-testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .new-card {
+      background-color: hsl(var(--card));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .new-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .new-card-stars {
+      display: flex;
+      color: hsl(var(--primary));
+    }
+
+    .new-card-stars svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+    }
+
+    .new-card-platform {
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+    }
+
+    .new-card-body {
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .new-card-text {
+      color: hsl(var(--muted-foreground));
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .new-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid hsl(var(--border));
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+
+    .new-card-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Round photo styling */
+    .new-card-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: hsl(var(--accent));
+      border: 2px solid hsl(var(--primary));
+      flex-shrink: 0;
+    }
+
+    .new-card-author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .new-card-name {
+      font-weight: 600;
+      color: hsl(var(--foreground));
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .new-card-date {
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+      margin: 0;
+    }
