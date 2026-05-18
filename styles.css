@@ -1279,9 +1279,10 @@ img {
 }
 
 .services-section .card {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 /* Control image area only in Services */
@@ -1339,11 +1340,6 @@ img {
 
 @media (max-width: 767px) {
   .hero-btn-mobile {
-    width: auto !important;
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;

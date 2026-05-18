@@ -114,6 +114,10 @@
     }
 
     function getCurrentSlide() {
+      const maxIndex = Math.max(0, totalItems - itemsPerView);
+      if (currentIndex >= maxIndex && maxIndex > 0) {
+        return Math.ceil(totalItems / itemsPerView) - 1;
+      }
       return Math.floor(currentIndex / itemsPerView);
     }
 
@@ -123,17 +127,17 @@
       
       // Special handling for desktop services carousel
       const servicesCarousel = carousel.closest('.services-section');
-      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 10;
+      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 11;
       
       if (isDesktopServices) {
         // Desktop: 4 slides with special layout
-        // Slide 1: items 1-3, Slide 2: items 4-6, Slide 3: items 7-9, Slide 4: items 8-10
+        // Slide 1: items 1-3, Slide 2: items 4-6, Slide 3: items 7-9, Slide 4: items 9-11
         totalSlides = 4;
         
         // Determine current slide based on currentIndex
         let currentSlide = 0;
-        if (currentIndex >= 7) {
-          currentSlide = 3; // Slide 4: items 8-10
+        if (currentIndex >= 8) {
+          currentSlide = 3; // Slide 4: items 9-11
         } else if (currentIndex >= 6) {
           currentSlide = 2; // Slide 3: items 7-9
         } else if (currentIndex >= 3) {
@@ -147,7 +151,7 @@
         if (currentSlide === 0) translateX = 0; // Slide 1: items 1-3
         else if (currentSlide === 1) translateX = 100; // Slide 2: items 4-6 (move 3 items = 100%)
         else if (currentSlide === 2) translateX = 200; // Slide 3: items 7-9 (move 6 items = 200%)
-        else if (currentSlide === 3) translateX = 233.333; // Slide 4: items 8-10 (move 7 items = 233.333%)
+        else if (currentSlide === 3) translateX = 266.666; // Slide 4: items 9-11 (move 8 items = 266.666%)
         
         track.style.transform = `translateX(-${translateX}%)`;
         track.style.transition = 'transform 0.35s ease';
@@ -159,11 +163,9 @@
         const maxIndex = Math.max(0, totalItems - itemsPerView);
         currentIndex = Math.min(currentIndex, maxIndex);
         
-        // compute current slide (0,1,2...)
-        const currentSlide = getCurrentSlide();
-        
-        // Move by slide * 100%
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // mathematical percentage shift
+        const translateX = (currentIndex / itemsPerView) * 100;
+        track.style.transform = `translateX(-${translateX}%)`;
         track.style.transition = 'transform 0.35s ease';
       }
 
@@ -175,7 +177,7 @@
       if (dotsContainer) {
         const existingDots = dotsContainer.querySelectorAll('.carousel-dot');
         const currentSlide = isDesktopServices 
-          ? (currentIndex >= 7 ? 3 : currentIndex >= 6 ? 2 : currentIndex >= 3 ? 1 : 0)
+          ? (currentIndex >= 8 ? 3 : currentIndex >= 6 ? 2 : currentIndex >= 3 ? 1 : 0)
           : getCurrentSlide();
         
         if (existingDots.length !== totalSlides) {
@@ -201,7 +203,7 @@
 
       // Update prev/next buttons
       const currentSlide = isDesktopServices 
-        ? (currentIndex >= 7 ? 3 : currentIndex >= 6 ? 2 : currentIndex >= 3 ? 1 : 0)
+        ? (currentIndex >= 8 ? 3 : currentIndex >= 6 ? 2 : currentIndex >= 3 ? 1 : 0)
         : getCurrentSlide();
       if (prevBtn) prevBtn.disabled = currentSlide === 0;
       if (nextBtn) nextBtn.disabled = currentSlide >= (totalSlides - 1);
@@ -210,14 +212,14 @@
     function goToSlide(slideIndex) {
       itemsPerView = getItemsPerView();
       const servicesCarousel = carousel.closest('.services-section');
-      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 10;
+      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 11;
       
       if (isDesktopServices) {
         // Desktop services carousel special navigation
         if (slideIndex === 0) currentIndex = 0; // Slide 1: items 1-3
         else if (slideIndex === 1) currentIndex = 3; // Slide 2: items 4-6
         else if (slideIndex === 2) currentIndex = 6; // Slide 3: items 7-9
-        else if (slideIndex === 3) currentIndex = 7; // Slide 4: items 8-10
+        else if (slideIndex === 3) currentIndex = 8; // Slide 4: items 9-11
       } else {
         // Normal navigation
         const targetIndex = slideIndex * itemsPerView;
@@ -230,13 +232,13 @@
     function nextSlide() {
       itemsPerView = getItemsPerView();
       const servicesCarousel = carousel.closest('.services-section');
-      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 10;
+      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 11;
       
       if (isDesktopServices) {
         // Desktop services carousel special navigation
         if (currentIndex === 0) currentIndex = 3; // Go to slide 2
         else if (currentIndex === 3) currentIndex = 6; // Go to slide 3
-        else if (currentIndex === 6) currentIndex = 7; // Go to slide 4
+        else if (currentIndex === 6) currentIndex = 8; // Go to slide 4
         else return; // Already on last slide
       } else {
         // Normal navigation
@@ -250,11 +252,11 @@
     function prevSlide() {
       itemsPerView = getItemsPerView();
       const servicesCarousel = carousel.closest('.services-section');
-      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 10;
+      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 11;
       
       if (isDesktopServices) {
         // Desktop services carousel special navigation
-        if (currentIndex === 7) currentIndex = 6; // Go to slide 3
+        if (currentIndex === 8) currentIndex = 6; // Go to slide 3
         else if (currentIndex === 6) currentIndex = 3; // Go to slide 2
         else if (currentIndex === 3) currentIndex = 0; // Go to slide 1
         else return; // Already on first slide
@@ -289,7 +291,7 @@
         const oldItemsPerView = itemsPerView;
         itemsPerView = getItemsPerView();
         const servicesCarousel = carousel.closest('.services-section');
-        const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 10;
+        const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 11;
         
         if (isDesktopServices) {
           // Maintain current slide position for desktop services
@@ -336,14 +338,14 @@
       const dragPercent = (dx / track.clientWidth) * 100;
 
       const servicesCarousel = carousel.closest('.services-section');
-      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 10;
+      const isDesktopServices = servicesCarousel && window.innerWidth >= 1024 && totalItems === 11;
       
       let currentSlide = 0;
       let baseTranslateX = 0;
       
       if (isDesktopServices) {
         // Desktop services carousel special handling
-        if (currentIndex >= 7) currentSlide = 3;
+        if (currentIndex >= 8) currentSlide = 3;
         else if (currentIndex >= 6) currentSlide = 2;
         else if (currentIndex >= 3) currentSlide = 1;
         else currentSlide = 0;
@@ -351,10 +353,10 @@
         if (currentSlide === 0) baseTranslateX = 0;
         else if (currentSlide === 1) baseTranslateX = 100;
         else if (currentSlide === 2) baseTranslateX = 200;
-        else if (currentSlide === 3) baseTranslateX = 233.333;
+        else if (currentSlide === 3) baseTranslateX = 266.666;
       } else {
-        currentSlide = getCurrentSlide();
-        baseTranslateX = currentSlide * 100;
+        const translateX = (currentIndex / itemsPerView) * 100;
+        baseTranslateX = translateX;
       }
 
       const targetX = -baseTranslateX + dragPercent;

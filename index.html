@@ -28,7 +28,7 @@
 
   <link rel="stylesheet" href="/fonts/poppins.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
 
 
@@ -199,7 +199,7 @@
   <nav class="nav">
     <div class="container nav-container">
       <a href="index.html" class="flex items-center">
-        <img src="Black_Logo.webp" alt="Dr MC Molapo Dentist" style="height: 3rem; width: auto;" />
+        <img src="assets/Black_Logo.webp" alt="Dr MC Molapo Dentist" style="height: 3rem; width: auto;" />
       </a>
 
       <!-- Desktop Navigation -->
@@ -254,7 +254,7 @@
 
     <div class="container hero-content">
       <div class="max-w-2xl animate-slide-up">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">Gentle, Trusted Dental Care in
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">Gentle, Trusted Dentist in
           Bloemfontein</h1>
         <p class="text-lg md:text-xl text-muted-foreground mb-8">
           Experience exceptional dental care in a comfortable, clean environment.
@@ -291,9 +291,22 @@
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex flex-wrap gap-4 justify-start">
           <a href="tel:0514300927" class="btn btn-default btn-lg btn-rounded-full hero-btn-mobile">
-            Book Appointment
+            <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/27677708227" target="_blank" rel="noopener noreferrer"
+            class="btn btn-outline btn-lg btn-rounded-full hero-btn-mobile" aria-label="Chat with us on WhatsApp"
+            style="display: flex; gap: 0.5rem;">
+            <svg class="icon-sm" style="color: #25D366;" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path
+                d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507zM16.062 28.228c-2.319 0-4.489-0.64-6.342-1.753l-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353zm6.776-9.251c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852-0.799-0.74-1.484-1.587-2.037-2.521-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604 0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463-0.802 0.761-1.3 1.834-1.3 3.023 0 1.467 0.681 2.784 1.527 3.857 1.604 2.379 3.742 4.282 6.251 5.564 0.548 0.248 1.25 0.513 1.968 0.74 0.442 0.14 0.951 0.221 1.479 0.221 1.069-0.223 1.956-0.868 2.497-1.749 0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542-0.092-0.155-0.34-0.247-0.712-0.434z" />
+            </svg>
+            WhatsApp
           </a>
         </div>
       </div>
@@ -342,7 +355,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="dental_cleanings.webp" alt="Dental Cleanings" class="w-full h-full object-cover" />
+                      <img src="assets/services/dental_cleanings.webp" alt="Dental Cleanings" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Dental Cleanings</h3>
@@ -360,7 +373,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="dental_fillings.webp" alt="Dental Fillings" class="w-full h-full object-cover" />
+                      <img src="assets/services/dental_fillings.webp" alt="Dental Fillings" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Dental Fillings</h3>
@@ -378,7 +391,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="tooth_extraction.webp" alt="Tooth Extraction" class="w-full h-full object-cover" />
+                      <img src="assets/services/tooth_extraction.webp" alt="Tooth Extraction" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Tooth Extraction</h3>
@@ -396,7 +409,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="treatment_of_gum_infections.webp" alt="Treatment of Gum Infections"
+                      <img src="assets/services/treatment_of_gum_infections.webp" alt="Treatment of Gum Infections"
                         class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
@@ -415,7 +428,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="dentures.webp" alt="Dentures" class="w-full h-full object-cover" />
+                      <img src="assets/services/dentures.webp" alt="Dentures" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Dentures</h3>
@@ -432,7 +445,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="veneers.webp" alt="Veneers" class="w-full h-full object-cover" />
+                      <img src="assets/services/veneers.webp" alt="Veneers" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Veneers</h3>
@@ -449,7 +462,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="crown_and_bridge.webp" alt="Crown and Bridge" class="w-full h-full object-cover" />
+                      <img src="assets/services/crown_and_bridge.webp" alt="Crown and Bridge" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Crown and Bridge</h3>
@@ -467,7 +480,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="teeth_whitening.webp" alt="Teeth Whitening" class="w-full h-full object-cover" />
+                      <img src="assets/services/teeth_whitening.webp" alt="Teeth Whitening" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Teeth Whitening</h3>
@@ -485,7 +498,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="orthodontic_braces.webp" alt="Orthodontic Braces" class="w-full h-full object-cover" />
+                      <img src="assets/services/orthodontic_braces.webp" alt="Orthodontic Braces" class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
                       <h3 class="card-title">Orthodontic Braces</h3>
@@ -502,7 +515,7 @@
                     class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
                     style="display: block; text-decoration: none; color: inherit;">
                     <div class="w-full" style="height: 12rem; overflow: hidden;">
-                      <img src="specialist_referrals.webp" alt="Specialist Referrals"
+                      <img src="assets/services/specialist_referrals.webp" alt="Specialist Referrals"
                         class="w-full h-full object-cover" />
                     </div>
                     <div class="card-header">
@@ -511,6 +524,25 @@
                     <div class="card-content">
                       <p class="text-muted-foreground">Coordinated referrals to trusted dental specialists for
                         specialized care.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="p-1">
+                  <a href="tooth-jewellery.html"
+                    class="card border-border hover-shadow-lg transition-all hover-lift h-full cursor-pointer overflow-hidden"
+                    style="display: block; text-decoration: none; color: inherit;">
+                    <div class="w-full" style="height: 12rem; overflow: hidden;">
+                      <img src="assets/services/tooth-jewellery.webp" alt="Tooth Jewellery" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="card-header">
+                      <h3 class="card-title">Tooth Jewellery</h3>
+                    </div>
+                    <div class="card-content">
+                      <p class="text-muted-foreground">
+                        Gold inlays, silver inlays and gems.
+                      </p>
                     </div>
                   </a>
                 </div>
@@ -582,13 +614,12 @@
               </div>
               <span class="text-xs text-muted-foreground">Google</span>
             </div>
-            <p class="text-muted-foreground mb-4" style="font-style: italic;">"I had an exceptional experience. The
-              Doctor was very helpful, gave me a very insightful session before we started. She was very knowledgeable
-              about my situation and gave best advice. I am happy with her service and the general service of this
-              practice. I can recommend it to anyone"</p>
+            <p class="text-muted-foreground mb-4" style="font-style: italic;">"I had two of my bottom wisdom teeth
+              removed here. Very great experience it was done properly bc I didn't feel much pain, very friendly area or
+              staff, I'm coming back again."</p>
             <div class="flex items-center justify-between">
-              <p class="font-semibold text-foreground">Thabang Mokgosi</p>
-              <p class="text-xs text-muted-foreground">05/11/2025</p>
+              <p class="font-semibold text-foreground">Excellent S.</p>
+              <p class="text-xs text-muted-foreground">20/04/2026</p>
             </div>
           </div>
         </div>
@@ -619,11 +650,13 @@
               </div>
               <span class="text-xs text-muted-foreground">Google</span>
             </div>
-            <p class="text-muted-foreground mb-4" style="font-style: italic;">"Dr Molapo she is so professional, she the
-              most gentle Dentist l have ever known, she really makes you feel at home"</p>
+            <p class="text-muted-foreground mb-4" style="font-style: italic;">"She is such a wonderful doctor, together
+              with the ladies she works with. She explains everything thoroughly before she starts. I am always so
+              nervous going into my appointments but there is a lady who always holds my hand to calm me down. I really
+              appreciate all of them."</p>
             <div class="flex items-center justify-between">
-              <p class="font-semibold text-foreground">Lerato Mokhahlane</p>
-              <p class="text-xs text-muted-foreground">30/10/2025</p>
+              <p class="font-semibold text-foreground">Refiloe M.</p>
+              <p class="text-xs text-muted-foreground">17/04/2026</p>
             </div>
           </div>
         </div>
@@ -654,11 +687,12 @@
               </div>
               <span class="text-xs text-muted-foreground">Google</span>
             </div>
-            <p class="text-muted-foreground mb-4" style="font-style: italic;">"It was a great experience. People are
-              very friendly, and very hygienic. Would recommend"</p>
+            <p class="text-muted-foreground mb-4" style="font-style: italic;">"Dr Molapo and her personal are caring and
+              very helpful and the treatment were painless. She explained everything clearly to me and. I will recommend
+              her to anyone. She is wonderful. Nala Victor."</p>
             <div class="flex items-center justify-between">
-              <p class="font-semibold text-foreground">Motlalepule Kgoboko</p>
-              <p class="text-xs text-muted-foreground">28/10/2025</p>
+              <p class="font-semibold text-foreground">Nala V.</p>
+              <p class="text-xs text-muted-foreground">16/04/2026</p>
             </div>
           </div>
         </div>
@@ -838,7 +872,7 @@
         <!-- Brand -->
         <div>
           <div class="footer-logo">
-            <img src="Black_Logo.webp" alt="Dr MC Molapo Dentist" class="responsive-logo" />
+            <img src="assets/Black_Logo.webp" alt="Dr MC Molapo Dentist" class="responsive-logo" />
           </div>
           <p class="text-sm text-muted-foreground">
             Let's take you a smile further.
